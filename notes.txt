@@ -1,0 +1,24 @@
+To make hangman game:
+
+- first need to make array of several words that the computer will randomly pick
+- computer will tell player how many characters are in the word it picked
+- will need to have user input a guess
+- computer will check if any of the letters appear in the word that was picked
+    - if any letters, computer will have to say which letter and how many instances of it appear
+    - if none, then computer will prompt user to guess again
+- after user's guess, computer will tell user how many guesses they have left
+- once last guess is used, if it is wrong, tell user what the word was and say sorry you lost
+- if guess matches the word, break the loop and tell user they won
+
+We need:
+- random bank of words
+- guesses allowed (8)
+
+
+After having the computer randomly select a word:
+1. it tells us how many letters are in the word
+2. now, it should ask user for input 
+
+For Each character in the guessed word as [], (maybe use String.split()),
+ or alternatively, For index in String.length, check if the character exists
+ inside the random word (Maybe use a function like String.includes())

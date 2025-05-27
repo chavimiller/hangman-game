@@ -25,12 +25,38 @@
         let word = wordBank[randomIndex];
         return word;
       }
-      const randomWord = getRandomChoice();
+
+      function getMyGuess() {
+        const guess = prompt("Guess a word");
+        return guess;
+      }
 
       function playGame() {
         console.log(`This word has ${randomWord.length} letters in it.`);
+        let round = 0;
+        let letterBank = [];
+
+        while (round < 8) {
+          function playRound() {
+            const myGuess = prompt("Guess a word.");
+            if (myGuess == randomWord) {
+              console.log(`Correct! The word was ${randomWord}`);
+            } else {
+              console.log("You got it wrong");
+            }
+          }
+          round++;
+        }
       }
+      const randomWord = getRandomChoice();
       playGame();
+
+      /*
+      function getMyGuess() {
+          const myGuess = prompt("Guess a word");
+          return myGuess;
+        } 
+    */
     </script>
   </body>
 </html>

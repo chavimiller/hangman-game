@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getRandomChoice() {
+        const wordBank = [
+          "basketball",
+          "glacier",
+          "thunder",
+          "juggle",
+          "sparrow",
+          "canyon",
+          "marble",
+          "blossom",
+          "frost",
+          "riddle",
+          "timber",
+        ];
+        let randomIndex = Math.floor(Math.random() * wordBank.length);
+        let word = wordBank[randomIndex];
+        return word;
+      }
+      const randomWord = getRandomChoice();
+
+      function playGame() {
+        console.log(`This word has ${randomWord.length} letters in it.`);
+      }
+      playGame();
+    </script>
+  </body>
+</html>

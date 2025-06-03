@@ -29,13 +29,13 @@
       function playGame() {
         console.log(`This word has ${randomWord.length} letters in it.`);
         let round = 0;
+        let charArray = [];
         while (round < 8) {
           const myGuess = prompt("Guess a word.");
           if (myGuess === randomWord) {
             console.log(`Correct! The word was ${randomWord}.`);
             break;
           } else {
-            let charArray = [];
             let splitGuess = myGuess.split(""); // This now is an array?
             for (index in randomWord) {
               if (
@@ -46,7 +46,7 @@
               }
             }
             console.log(`The word contains these letters: ${charArray}`);
-            console.log("You got it wrong");
+            console.log(`You got it wrong. Your guess: ${myGuess}`);
           }
 
           round++;

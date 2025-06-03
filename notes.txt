@@ -22,3 +22,6 @@ After having the computer randomly select a word:
 For Each character in the guessed word as [], (maybe use String.split()),
  or alternatively, For index in String.length, check if the character exists
  inside the random word (Maybe use a function like String.includes())
+
+
+

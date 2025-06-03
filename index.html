@@ -29,25 +29,30 @@
       function playGame() {
         console.log(`This word has ${randomWord.length} letters in it.`);
         let round = 0;
-        let letterBank = [];
-
         while (round < 8) {
           const myGuess = prompt("Guess a word.");
-          if (myGuess == randomWord) {
-            console.log(`Correct! The word was ${randomWord}`);
+          if (myGuess === randomWord) {
+            console.log(`Correct! The word was ${randomWord}.`);
+            break;
           } else {
-            let containsCharacter = false;
-            const charArray = myGuess.split("");
-            charArray.forEach((character) => {
-              for (index in randomWord) {
-                if (randomWord[index] === character) {
-                  console.log(character);
-                }
+            let charArray = [];
+            let splitGuess = myGuess.split(""); // This now is an array?
+            for (index in randomWord) {
+              if (
+                splitGuess.includes(randomWord[index]) &&
+                !charArray.includes(randomWord[index])
+              ) {
+                charArray.push(randomWord[index]);
               }
-            });
+            }
+            console.log(`The word contains these letters: ${charArray}`);
             console.log("You got it wrong");
           }
+
           round++;
+          if (round >= 8) {
+            console.log(`The word was ${randomWord}`);
+          }
         }
       }
       const randomWord = getRandomChoice();
